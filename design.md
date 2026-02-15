@@ -3,20 +3,20 @@
 ## Overall Architecture
 
 User (Web / Voice / SMS)
-        ↓
+        →
 Input Processing Layer
 (Speech-to-Text / Text Normalization)
-        ↓
+        →
 NLP Attribute Extraction Engine
-        ↓
+        →
 AI Eligibility Matching Engine
-        ↓
+        →
 AI Score Engine (0–100 Recommendation Score)
-        ↓
+        →
 Scheme Knowledge Base (DynamoDB)
-        ↓
+        →
 Response Generator (Multilingual)
-        ↓
+        →
 User Output (Chat / Voice / SMS Reply)
 
 --------------------------------------------------
