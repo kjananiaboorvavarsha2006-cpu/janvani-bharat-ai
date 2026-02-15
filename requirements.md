@@ -2,47 +2,87 @@
 
 ## Problem Statement
 
-Citizens often fail to access government welfare schemes because eligibility rules are complex, scattered across documents, and difficult to understand in local languages. Manual lookup is slow and confusing.
+Citizens often fail to access government welfare schemes because eligibility rules are complex, scattered across documents, and difficult to understand in local languages. Manual lookup is slow, confusing, and inaccessible to rural populations.
 
 ## Target Users
 
-* Rural and semi-urban citizens
-* Farmers and informal workers
-* Students and job seekers
-* Local language speakers (Tamil/Hindi)
+- Rural and semi-urban citizens
+- Farmers and informal workers
+- Students and job seekers
+- Small business owners
+- Local language speakers (Tamil/Hindi)
+- Low-connectivity rural users (SMS-based access)
 
-## Why AI Is Needed (Not Just Rules)
+## Why AI Is Needed (Not Just Rule-Based Filters)
 
-Government scheme documents are written in unstructured text with varying eligibility conditions. AI is required to:
+Government scheme documents are written in unstructured and complex language with varying eligibility conditions.
 
-* Understand natural language user queries
-* Extract user attributes from voice/text
-* Semantically match user profiles with scheme rules
-* Rank the most relevant schemes
+AI is required to:
 
-A rule-only filter cannot handle language variation and complex eligibility descriptions.
+- Understand natural language user queries
+- Extract structured user attributes from voice/text
+- Perform semantic matching with scheme descriptions
+- Handle multilingual variations
+- Rank and score scheme relevance
+
+A rule-only filter cannot effectively interpret language variation, incomplete inputs, or complex eligibility descriptions.
 
 ## AI Approach
 
-We use NLP models for:
+We use NLP-based AI models for:
 
-* Entity extraction (age, income, occupation, location)
-* Semantic similarity matching with scheme descriptions
-* Recommendation ranking
-* Multilingual response generation
+- Entity extraction (age, income, occupation, location)
+- Semantic similarity matching
+- Personalized recommendation ranking
+- Multilingual response generation
+
+Additionally, we implement:
+
+### Personalized Recommendation Scoring (AI Score Engine)
+
+Each scheme is assigned a 0–100 eligibility confidence score based on:
+- Income alignment
+- Age criteria
+- Occupation match
+- Location eligibility
+- Scheme-specific weightage
+
+This enables transparent and explainable ranking.
+
+## Rural Offline SMS Mode
+
+To support low-connectivity areas:
+
+- Users can send basic profile details via SMS
+- Backend processes the request
+- AI evaluates eligibility
+- SMS reply returns top 2 matching schemes
+
+This ensures digital inclusion beyond smartphones.
 
 ## Expected Output
 
-User gives profile via chat/voice → system returns:
+User provides profile via chat/voice/SMS → system returns:
 
-* Eligible schemes
-* Reason for eligibility
-* Benefit summary
-* Required documents
-* Application guidance
+- Eligible schemes
+- AI-based eligibility score
+- Reason for eligibility
+- Benefit summary
+- Required documents
+- Step-by-step application guidance
 
-## Responsible Design
+## Responsible & Secure Design
 
-* No personal data permanently stored
-* Transparent eligibility reasoning shown
-* Human verification recommended before final apply
+- No permanent storage of sensitive personal data
+- Encrypted request handling
+- Transparent eligibility explanation
+- Human verification recommended before final submission
+
+## Innovation & Hackathon Alignment
+
+- AI-first citizen assistance model
+- Multilingual accessibility
+- Cloud-native scalable architecture
+- Real-world public impact
+- Inclusive rural access via SMS
+- Explainable AI scoring mechanism
